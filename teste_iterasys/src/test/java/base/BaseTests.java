@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pages.HomePage;
+
 public class BaseTests {
 	
 	private static WebDriver driver;
@@ -23,7 +25,7 @@ public class BaseTests {
 		homePage = new HomePage(driver);
 	}
 	
-	@AfterAll
+	@AfterAll // apos execução da classe de testes ( para fechar o browser )
 	public static void finalizar() {
 		driver.quit();
 	}
