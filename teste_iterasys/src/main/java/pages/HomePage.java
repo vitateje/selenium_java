@@ -52,5 +52,10 @@ public class HomePage {
 	public String obterPrecoProduto(int indice) {
 		return driver.findElements(precoDosProdutos).get(indice).getText();
 	}
+	
+	public ProdutoPage clicarProduto(int indice) {
+		driver.findElements(descricoesDosProdutos).get(indice).click();
+		return new ProdutoPage(driver);
+	}
 
 }
