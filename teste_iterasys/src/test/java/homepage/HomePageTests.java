@@ -15,15 +15,13 @@ public class HomePageTests extends BaseTests {
 	public void testContarProdutos_oitoProdutosDiferentes() {
 		carregarPaginaInicial();
 		assertThat(homePage.contarProdutos(), is(8));
-		
 	}
 	
 	@Test
 	public void testValidarCarrinhoZerado_ZeroItensNoCarrinho() {
 		int produtosNoCarrinho = homePage.obterQuantidadeProdutosNoCarrinho();
 		System.out.println(produtosNoCarrinho);
-		assertThat(produtosNoCarrinho, is (0));
-		
+		assertThat(produtosNoCarrinho, is (0));		
 	}
 	
 	// aula - testar o fluxo padrão - p1
@@ -46,8 +44,7 @@ public class HomePageTests extends BaseTests {
 		
 		assertThat(nomeProduto_HomePage.toUpperCase(), is (nomeProduto_ProdutoPage.toUpperCase()));
 		assertThat(precoProduto_HomePage, is(precoProduto_ProdutoPage));
-		
-		}
+	}
 	
 	@Test
 	public void testLoginComSucesso_UsuarioLogado() {
@@ -66,10 +63,7 @@ public class HomePageTests extends BaseTests {
 		
 		// Validar se o usuario está logado de fato
 		
-		assertThat(homePage.estaLogado("Marcelo Bittencourt"), is(true));
-		
-		
-		
+		assertThat(homePage.estaLogado("Marcelo Bittencourt"), is(true));		
 	}
 	
 }
