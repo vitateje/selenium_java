@@ -3,6 +3,8 @@ package homepage;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import base.BaseTests;
@@ -24,7 +26,9 @@ public class HomePageTests extends BaseTests {
 		assertThat(produtosNoCarrinho, is (0));		
 	}
 	
-	// aula - testar o fluxo padr√£o - p1
+	// aula - testar o fluxo padr„o - p1
+	
+	ProdutoPage produtoPage;
 	@Test
 	public void testValidarDetalhesDoProduto_DescricaoEValorIguais() {
 		int indice = 0;
@@ -34,7 +38,7 @@ public class HomePageTests extends BaseTests {
 		System.out.println(nomeProduto_HomePage);
 		System.out.println(precoProduto_HomePage);
 		
-		ProdutoPage produtoPage = homePage.clicarProduto(indice);
+		produtoPage = homePage.clicarProduto(indice);
 		
 		String nomeProduto_ProdutoPage = produtoPage.obterNomeProduto();
 		String precoProduto_ProdutoPage = produtoPage.obterPrecoProduto();
@@ -46,11 +50,12 @@ public class HomePageTests extends BaseTests {
 		assertThat(precoProduto_HomePage, is(precoProduto_ProdutoPage));
 	}
 	
+	LoginPage loginPage;
 	@Test
 	public void testLoginComSucesso_UsuarioLogado() {
 		// Clicar no botao Sign in na home page
 		
-		LoginPage loginPage = homePage.clicarBotaoSignIn();
+		loginPage = homePage.clicarBotaoSignIn();
 		
 		// Preencher usuario e senha
 		
@@ -61,11 +66,11 @@ public class HomePageTests extends BaseTests {
 		
 		loginPage.clicarBotaoSignIn();
 		
-		// Validar se o usuario est√° logado de fato
+		// Validar se o usuario est· logado de fato
 		
 		assertThat(homePage.estaLogado("Marcelo Bittencourt"), is(true));
 		
-		// retornar apgina inicial
+		// Retornar pagina inicial
 		
 		carregarPaginaInicial();
 		
@@ -75,7 +80,7 @@ public class HomePageTests extends BaseTests {
 	public void incluirProdutoNoCarrinho_ProdutoIncluidoComSucesso() {
 		
 		// Pre Condicao
-		//Usuario Logado
+		// Usuario Logado
 		if(!homePage.estaLogado("Marcelo Bittencourt")) {
 			testLoginComSucesso_UsuarioLogado();
 		}
@@ -85,14 +90,22 @@ public class HomePageTests extends BaseTests {
 		testValidarDetalhesDoProduto_DescricaoEValorIguais();
 		
 		// Selecionar tamanho
+		List <String> listaOpcoes = produtoPage.obterOpcoesSelecionadas();
 		
+		System.out.println(listaOpcoes.get(0));
+		System.out.println("Tamanho da Lista: " + listaOpcoes.size());
+		
+		produtoPage.selecionarOpcaoDropDown("M");
+		
+		listaOpcoes = produtoPage.obterOpcoesSelecionadas();
 		
 		// Selecionar cor
 		
 		
 		// Selecionar quantidade
 		
-		// Adiconar no carrinho
+		
+		// Adicionar no carrinho
 	}
 	
 }
