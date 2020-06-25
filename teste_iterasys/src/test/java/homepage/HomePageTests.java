@@ -63,7 +63,36 @@ public class HomePageTests extends BaseTests {
 		
 		// Validar se o usuario está logado de fato
 		
-		assertThat(homePage.estaLogado("Marcelo Bittencourt"), is(true));		
+		assertThat(homePage.estaLogado("Marcelo Bittencourt"), is(true));
+		
+		// retornar apgina inicial
+		
+		carregarPaginaInicial();
+		
+	}
+	
+	@Test
+	public void incluirProdutoNoCarrinho_ProdutoIncluidoComSucesso() {
+		
+		// Pre Condicao
+		//Usuario Logado
+		if(!homePage.estaLogado("Marcelo Bittencourt")) {
+			testLoginComSucesso_UsuarioLogado();
+		}
+		
+		// Teste
+		// Selecionando produto
+		testValidarDetalhesDoProduto_DescricaoEValorIguais();
+		
+		// Selecionar tamanho
+		
+		
+		// Selecionar cor
+		
+		
+		// Selecionar quantidade
+		
+		// Adiconar no carrinho
 	}
 	
 }

@@ -15,7 +15,7 @@ public class BaseTests {
 	
 	@BeforeAll // primeiro metodo a ser executado - configuração do webdriver
 	public static void inicializar() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vitateje\\Desktop\\selenium_java-master\\teste_iterasys\\drivers\\chrome\\83\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DEFAULT.DESKTOP-412ER6V\\Desktop\\selenium_java\\teste_iterasys\\drivers\\chrome\\83\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	
