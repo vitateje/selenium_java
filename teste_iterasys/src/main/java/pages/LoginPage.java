@@ -12,7 +12,7 @@ private WebDriver driver;
 	
 	private By password = By.name("password");
 	
-	private By botaoSignIn = By.id("submit-logind");
+	private By botaoSignIn = By.id("submit-login");
 	
 	// Construtor Padrao
 	public LoginPage(WebDriver driver) {

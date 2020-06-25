@@ -22,9 +22,9 @@ public class HomePage {
 	
 	private By precoDosProdutos = By.cssSelector(".price");
 	
-	private By botaoSignIn = By.cssSelector("#_desktop_user_info span.hidden-sm-down");
+	private By botaoSignIn = By.id("_desktop_user_info");
 	
-	private By usuarioLogado = By.cssSelector("#_desktop_user_info span.hidden-sm-down");
+	private By usuarioLogado = By.id("_desktop_user_info");
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
