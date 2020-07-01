@@ -99,13 +99,18 @@ public class HomePageTests extends BaseTests {
 		
 		listaOpcoes = produtoPage.obterOpcoesSelecionadas();
 		
+		System.out.println(listaOpcoes.get(0));
+		System.out.println("Tamanho da Lista: " + listaOpcoes.size());
+
+			
 		// Selecionar cor
-		
+		produtoPage.selecionarCorPreta();
 		
 		// Selecionar quantidade
-		
+		produtoPage.alterarQuantidade(2);
 		
 		// Adicionar no carrinho
+		produtoPage.clicarBotaoAddToCart();
 	}
 	
 }
