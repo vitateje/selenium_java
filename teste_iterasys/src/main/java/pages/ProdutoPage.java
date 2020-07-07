@@ -68,8 +68,9 @@ public class ProdutoPage {
 		driver.findElement(quantidadeProduto).sendKeys(Integer.toString(quantidade));
 	}
 	
-	public void clicarBotaoAddToCart() {
+	public ModalProdutoPage clicarBotaoAddToCart() {
 		driver.findElement(botaoAddToCart).click();
+		return new ModalProdutoPage(driver);
 	}
 
 }
